@@ -1,7 +1,7 @@
 ! waveqlab3d input file: test problem for mms on cartesian grid with friction
 
 &problem_list
- name = 'Mont-Blanc_node-1_block-2_elastic_dom-n_traditional-6_res-100m_pml-2km', 
+ name = 'Mont-Blanc_node-1_block-2_elastic_dom-n_traditional-6_res-100m_pml-0km', 
  response = 'elastic',
  problem = 'TPV5'
  nblocks = 2,
@@ -18,9 +18,9 @@
  w_fault = F /
 
 &block_list
-btp(1)%nqrs = 101, 151, 201,
-btp(1)%aqrs = -10d0, 0d0, -10d0,
-btp(1)%bqrs =  0d0, 15d0,  10d0,
+btp(1)%nqrs = 101, 101, 321,
+btp(1)%aqrs = -16d0, 0d0, -16d0,
+btp(1)%bqrs =  0d0, 10d0,  16d0,
 btp(1)%rho_s_p = 2.7d0, 3.464d0, 6d0,
 btp(1)%lqrs = 1, 2, 1,
 btp(1)%rqrs = 0, 1, 1,
@@ -31,12 +31,12 @@ btp(1)%lc = 1d0,
 btp(1)%rc = 0d0,
 btp(1)%profile_type= 'no_path',
 btp(1)%topography_type = 'read_topo_from_memory',
-btp(1)%topography_path= './input/Mont-Blanc_topo_100m_block1.dat',
+btp(1)%topography_path= './topo/Mont-Blanc_topo_100m_block1.dat',
 
 
-btp(2)%nqrs = 101, 151, 201,
-btp(2)%aqrs =  0d0, 0d0, -10d0,
-btp(2)%bqrs =  10d0, 15d0,  10d0,
+btp(2)%nqrs = 161, 101, 321,
+btp(2)%aqrs =  0d0, 0d0, -16d0,
+btp(2)%bqrs =  16d0, 10d0,  16d0,
 btp(2)%rho_s_p = 2.7d0, 3.464d0, 6d0,
 btp(2)%lqrs = 0, 2, 1,
 btp(2)%rqrs = 1, 1, 1,
@@ -47,7 +47,7 @@ btp(2)%lc = 0d0,
 btp(2)%rc = 1d0,
 btp(2)%profile_type= 'no_path',
 btp(2)%topography_type = 'read_topo_from_memory',
-btp(2)%topography_path= './input/Mont-Blanc_topo_100m_block2.dat',
+btp(2)%topography_path= './topo/Mont-Blanc_topo_100m_block2.dat',
 /
 
 &moment_list            
